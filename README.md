@@ -20,7 +20,7 @@ Percentage Games Where Score Rolls Over Twice: 0.6%
 
 Video of High Scoring Game:
 
-![High Score Video]{./space_invaders_ppo%20(score%2024935).gif}
+![High Score Video]{space_invaders_ppo__score_24935.gif}
 
 ![](http://i.imgur.com/60bts.gif)
 
