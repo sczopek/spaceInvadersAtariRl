@@ -13,12 +13,18 @@ I am proud of what I accomplished and wanted to share my results.
 
 **Mean Score:** 5.0 k
 
-Median Score: 4.3 k
-Std Dev Difference: 0.22 std dev between mean and median scores
-Sample Size: 500 Games Played 
-Std Dev:   3.4 k
-Percentage Games Where Score Rolls Over: 8.4% of games
-Percentage Games Where Score Rolls Over Twice: 0.6%
+**Median Score:** 4.3 k
+
+**Std Dev Difference:** 0.22 std dev between mean and median scores
+
+**Sample Size:** 500 Games Played 
+
+**Std Dev:**   3.4 k
+
+**Percentage Games Where Score Rolls Over:** 8.4% of games
+
+**Percentage Games Where Score Rolls Over Twice:** 0.6%
+
 
 Video of High Scoring Game:
 
