@@ -22,7 +22,7 @@ Video of High Scoring Game:
 
 ![High Score Video](space_invaders_ppo__score_24935.gif)
 
-<img src="space_invaders_ppo__score_24935.gif" width="250" height="250"/>
+<img src="space_invaders_ppo__score_24935.gif" width="1000" height="1000"/>
 
 
 ## Agent Model 
