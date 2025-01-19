@@ -77,7 +77,7 @@ StableBaselines-3: Contains a library of reinforcement learning agents that can 
 https://stable-baselines3.readthedocs.io/en/master/index.html
 
 
-## Cost Project
+## Project Costing
 
 ### Cloud Compute Costs
 
