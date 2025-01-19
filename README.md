@@ -20,9 +20,7 @@ Percentage Games Where Score Rolls Over Twice: 0.6%
 
 Video of High Scoring Game:
 
-![High Score Video]{https://github.com/sczopek/spaceInvadersAtariRl/blob/main/space_invaders_ppo__score_24935.gif}
-
-![](http://i.imgur.com/60bts.gif)
+![High Score Video](space_invaders_ppo__score_24935.gif)
 
 
 ## Agent Model 
