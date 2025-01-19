@@ -2,7 +2,7 @@
 
 I trained an AI Agent to play Atari’s Space Invaders.  The agent can get the score to roll over twice.  (The score rolls over when the score exceeds 9999.  This score rollover occurs around every 16 levels, so when the score rolls over twice the agent has completed the first 32 levels of the game.  Like many Atari games Space Invaders has no final level.  It is possible to play indefinitely.)
 
-My agent is a generalized agent.  It is self taught and plays Space Invaders using only the images shown on the screen.  The agent has no prior knowledge of the game and learned through self play.  This is similar to what [Google’s Deepmind team did with Atari’s Breakout game]{https://youtu.be/V1eYniJ0Rnk?si=MxJzxsX09T2sNEiW}.
+My agent is a generalized agent.  It is self taught and plays Space Invaders using only the images shown on the screen.  The agent has no prior knowledge of the game and learned through self play.  This is similar to what [Google’s Deepmind team did with Atari’s Breakout game](https://youtu.be/V1eYniJ0Rnk?si=MxJzxsX09T2sNEiW).
 
 I am proud of what I accomplished and wanted to share my results.
 
@@ -55,7 +55,7 @@ To achieve the final controller output, the final convolutional layer is flatten
 
 [Please see this Open AI announcement for details.](https://openai.com/index/openai-baselines-ppo/)
 
-[Or read this thesis for even more technical details.]{https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf}
+[Or read this thesis for even more technical details.](https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf)
 
 ## Python Modules Used for Project
 
