@@ -9,8 +9,10 @@ I am proud of what I accomplished and wanted to share my results.
 
 ## Results 
 
-High Score: 24.9 k  (24,935)  
-Mean Score: 5.0 k 
+**High Score:** 24.9 k  (24,935)  
+
+**Mean Score:** 5.0 k
+
 Median Score: 4.3 k
 Std Dev Difference: 0.22 std dev between mean and median scores
 Sample Size: 500 Games Played 
