@@ -22,6 +22,8 @@ Video of High Scoring Game:
 
 ![Alt Text]{https://github.com/sczopek/spaceInvadersAtariRl/blob/main/space_invaders_ppo%20(score%2024935).gif}
 
+![](http://i.imgur.com/60bts.gif)
+
 
 ## Agent Model 
 
