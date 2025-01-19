@@ -53,7 +53,7 @@ To achieve the final controller output, the final convolutional layer is flatten
 
 ## PPO Agent Training
 
-[Please see this Open AI announcement for details.]{https://openai.com/index/openai-baselines-ppo/}
+[Please see this Open AI announcement for details.](https://openai.com/index/openai-baselines-ppo/)
 
 [Or read this thesis for even more technical details.]{https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf}
 
