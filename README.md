@@ -21,7 +21,7 @@ I am proud of what I accomplished and wanted to share my results.
 
 **Std Dev:**   3.4 k
 
-**Percentage Games Where Score Rolls Over:** 8.4% of games
+**Percentage Games Where Score Rolls Over:** 8.4%
 
 **Percentage Games Where Score Rolls Over Twice:** 0.6%
 
