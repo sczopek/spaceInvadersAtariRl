@@ -89,12 +89,15 @@ https://stable-baselines3.readthedocs.io/en/master/index.html
 ## Agent Performance Plots
 
 ### AI Agent Score PDF
-![altText](./readmeImgs/scoringPdf_wSmoothing.png)
+![](./readmeImgs/scoringPdf_wSmoothing.png)
 
-![altText](./readmeImgs/sortedRewards_gameScore_vs_gameCount.png)
+The orange curve is the smoothed PDF function.  The raw score jumps in increments of 5, 10, 15, 20, 25 and 30, which leads to a jagged PDF with many gaps making it harder to interpret.
+
+![](./readmeImgs/sortedRewards_gameScore_vs_gameCount.png)
+
 The dashed line indicates where game score roll over occurs.  The score rolls over when it exceeds 9999.
 
 ### AI Agent Score CDF
-![altText](readmeImgs/cdfScore.png)
+![](readmeImgs/cdfScore.png)
 
 
