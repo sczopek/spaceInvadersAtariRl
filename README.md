@@ -89,12 +89,12 @@ https://stable-baselines3.readthedocs.io/en/master/index.html
 ## Agent Performance Plots
 
 ### AI Agent Score PDF
-[altText](./readmeImgs/scoringPdf_wSmoothing.png)
+![altText](./readmeImgs/scoringPdf_wSmoothing.png)
 
-[altText](./readmeImgs/sortedRewards_gameScore_vs_gameCount.png)
+![altText](./readmeImgs/sortedRewards_gameScore_vs_gameCount.png)
 The dashed line indicates where game score roll over occurs.  The score rolls over when it exceeds 9999.
 
 ### AI Agent Score CDF
-[altText](readmeImgs/cdfScore.png)
+![altText](readmeImgs/cdfScore.png)
 
 
