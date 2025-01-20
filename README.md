@@ -37,9 +37,9 @@ Video of High Scoring Game:
 This is a summary of how my agent chooses its Atari controller input for each frame of the game.
 
 The preprocessing layers.  
-•	Casting Images to Black and White
-•	Rescaling to Square Images
-•	Frame Stacking
+- Casting Images to Black and White
+- Rescaling to Square Images
+- Frame Stacking
 
 ### Casting Images to Black and White
 The raw game images are taken as model input from the ALE (Atari Learning Environment) emulator.  The raw images are then cast from color images into black and white images.  The rational for the loss of color is that black and white images are faster to train on.  A black and white image can be respresented by a single number, but a colored RGB image is represented by three numbers.  Additionally, the color images do not carry any additional information so using black and white does not result in a loss in information.  
@@ -55,7 +55,7 @@ The specifics of my framestacking scheme is to store and stack the last four ima
 
 ## CNN (Convolution Neural Net)
 
-The CNN layers accept a stack of images as input and then perform self-taught feature extraction.  This feature extraction is performed by sliding a window across the stack of images and performing a convolution of the sub-image in that sliding window.  This convolved product, of the sub-image, forms the next image layer, which is convolved again with a separate sliding window that belongs to the next convolutional layer.  This process is repeated several times.  
+The CNN layers accepts a stack of images as input and then perform self-taught feature extraction.  This feature extraction is performed by sliding a window across the stack of images and performing a convolution of the sub-image in that sliding window.  This convolved product, of the sub-image, forms the next image layer, which is convolved again with a separate sliding window that belongs to the next convolutional layer.  This process is repeated several times.  
 
 To achieve the final controller output, the final convolutional layer is flattened and passed through a dense, fully connected layer that maps the different extracted layers to Atari controller input probabilities.  (This is done with matrix multiplication of a weight matrix against the flattened feature vector CNN output.  Some details are omitted.)  The agent then chooses an action based on which probability has the highest chance of increasing the total score for the Space Invaders game.
 
