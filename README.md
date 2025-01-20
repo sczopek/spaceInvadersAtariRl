@@ -1,6 +1,6 @@
 # Space Invaders Project Summary
 
-I trained an AI Agent to play Atari’s Space Invaders.  The agent can get the score to roll over twice.  (The score rolls over when the score exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Like many Atari games Space Invaders has no final level.  It is possible to play the game indefinitely.  In practice the game does not last indefinitely.  For example the agent, in its highest scoring game, reaches level 42 before the game ends.)
+I trained an AI Agent to play Atari’s Space Invaders.  The agent can get the score to roll over twice.  (The score rolls over when the score exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Like many Atari games Space Invaders has no final level.  It is possible to play the game indefinitely.  In practice the game does not last indefinitely my agent can reach as far as level 42 in its highest scoring game.)
 
 My agent is self taught and plays Space Invaders using only the images shown on the screen.  The agent has no prior knowledge of the game and has learned to play through self play.  This is similar to what [Google’s Deepmind team did with Atari’s Breakout game](https://youtu.be/V1eYniJ0Rnk?si=MxJzxsX09T2sNEiW).
 
