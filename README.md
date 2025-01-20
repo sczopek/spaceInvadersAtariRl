@@ -53,11 +53,11 @@ Frame stacking is used to help the agent detect motion on the game screen.  A ra
 The specifics of my framestacking scheme is to store and stack the last four images as a tensor.  These four images are the current image and three previous image.  Each image has a four frame spacing between images, images (N - 12, N - 8, N - 4, N).  This is the output that is piped into the next CNN layer.
 
 
-## CNN (Convolution Neural Net)
+## CNN (Convolution Neural Net) and Selecting Atari Controller Command 
 
-The CNN layers accepts a stack of images as input and then perform self-taught feature extraction.  This feature extraction is performed by sliding a window across the stack of images and performing a convolution of the sub-image in that sliding window.  This convolved product, of the sub-image, forms the next image layer, which is convolved again with a separate sliding window that belongs to the next convolutional layer.  This process is repeated several times.  
+The CNN layers accepts a stack of images as input and then performs self-taught feature extraction.  This feature extraction is performed by sliding a window across the stack of images and performing a convolution of the sub-image in that sliding window.  This convolved product, of the sub-image, forms the next image layer, which is then convolved again with a separate sliding window that belongs to the next convolutional layer.  This process is repeated several times.  
 
-To achieve the final controller output, the final convolutional layer is flattened and passed through a dense, fully connected layer that maps the different extracted layers to Atari controller input probabilities.  (This is done with matrix multiplication of a weight matrix against the flattened feature vector CNN output.  Some details are omitted.)  The agent then chooses an action based on which probability has the highest chance of increasing the total score for the Space Invaders game.
+To achieve the final controller output, the final convolutional layer is flattened and passed through a dense, fully connected layer that maps the different extracted layers to Atari controller input probabilities.  (This is done with matrix multiplication of a weight matrix against the flattened feature vector CNN output.)  Some details are omitted for brevity.  The agent then chooses an action based on which probability has the highest chance of increasing the total score for the Space Invaders game.
 
 ## PPO Agent Training
 
@@ -82,4 +82,19 @@ https://stable-baselines3.readthedocs.io/en/master/index.html
 ### Cloud Compute Costs
 
 ### Engineering Man Hours
+
+
+# Additional Anaysis
+
+## Agent Performance Plots
+
+### AI Agent Score PDF
+[](readmeImgs/scoringPdf_wSmoothing.png)
+
+[](readmeImgs/sortedRewards_gameScore_vs_gameCount.png)
+The dashed line indicates where game score roll over occurs.  The score rolls over when it exceeds 9999.
+
+### AI Agent Score CDF
+[](readmeImgs/cdfScore.png)
+
 
