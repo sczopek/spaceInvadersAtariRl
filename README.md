@@ -1,6 +1,6 @@
 # Space Invaders Project Summary
 
-I trained an AI Agent to play Atari’s Space Invaders.  The agent can get the score to roll over twice.  (The score rolls over when the score exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Like many Atari games Space Invaders has no final level.  It is possible to play the game indefinitely.  In practice the game does not last indefinitely my agent can reach as far as level 42 in its highest scoring game.)
+I trained an AI Agent to play Atari’s Space Invaders.  The agent can get the score to roll over twice.  (The score rolls over when the score exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Like many Atari games Space Invaders has no final level.  It is possible to play the game indefinitely.  In practice my agent can reach as far as level 42 in its highest scoring game.)
 
 My agent is self taught and plays Space Invaders using only the images shown on the screen.  The agent has no prior knowledge of the game and has learned to play through self play.  This is similar to what [Google’s Deepmind team did with Atari’s Breakout game](https://youtu.be/V1eYniJ0Rnk?si=MxJzxsX09T2sNEiW).
 
@@ -45,7 +45,7 @@ The preprocessing layers.
 The raw game images are taken as model input from the ALE (Atari Learning Environment) emulator.  The raw images are then cast from color images into black and white images.  The rational for the loss of color is that black and white images are faster to train on.  A black and white image can be respresented by a single number, but a colored RGB image is represented by three numbers.  Additionally, the color images do not carry any additional information so using black and white does not result in a loss in information.  
 
 ### Rescaling to Square Images
-The images are then made square after being made black and white.  These square images also reduce model training time, because the agent does not need to learn that the images are rectangular when fitting certain multi-dimensional gaussian function under the hood*.  
+The images are then made square after being made black and white.  These square images also reduce model training time, because the agent does not need to learn that the images are rectangular when fitting certain multi-dimensional gaussian functions*.  
 
 ### Frame Stacking
 Frame stacking is used to help the agent detect motion on the game screen.  A raw screenshot does not indicate velocity for objects in the image frame.  A short image history buffer is used to infer object motion.   This motion detection behavior is automatically learned by the next CNN Layer.  
@@ -61,7 +61,7 @@ To achieve the final controller output, the final convolutional layer is flatten
 
 ## PPO Agent Training
 
-[Please see this Open AI announcement for details.](https://openai.com/index/openai-baselines-ppo/)
+[Please see this Open AI's announcement for details.](https://openai.com/index/openai-baselines-ppo/)
 
 [Or read this thesis for even more technical details.](https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf)
 
