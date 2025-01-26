@@ -36,7 +36,7 @@ Video of High Scoring Game:
 
 This is a summary of how my agent chooses its Atari controller input for each frame of the game.
 
-The preprocessing layers.  
+## Preprocessing Layers  
 - Casting Images to Black and White
 - Rescaling to Square Images
 - Frame Stacking
