@@ -88,10 +88,10 @@ https://stable-baselines3.readthedocs.io/en/master/index.html
 
 ## Agent Performance Plots
 
+A blue dashed line indicates where game score roll over occurs.  A game's score rolls over when it exceeds 9999.
+
 ### AI Agent Score PDF
 ![](./readmeImgs/sortedRewards_gameScore_vs_gameCount.png)
-
-The dashed line indicates where game score roll over occurs.  The score rolls over when it exceeds 9999.
 
 ![](./readmeImgs/scoringPdf_wSmoothing.png)
 
