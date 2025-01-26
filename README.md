@@ -95,7 +95,7 @@ A blue dashed line indicates where game score roll over occurs.  A game's score 
 
 ![](./readmeImgs/scoringPdf_wSmoothing.png)
 
-The orange curve is the smoothed PDF function.  The raw score jumps in increments of 5, 10, 15, 20, 25 and 30, which leads to a jagged PDF with many gaps making it harder to interpret.
+The orange curve is the smoothed PDF function.  The raw score jumps in increments of 5, 10, 15, 20, 25 and 30, which leads to a jagged PDF with many discrete gaps.
 
 ### AI Agent Score CDF
 ![](readmeImgs/cdfScore.png)
