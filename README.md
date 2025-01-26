@@ -15,7 +15,7 @@ I am proud of what I accomplished and wanted to share my results.
 
 **Median Score:** 4.3 k
 
-**Difference between Mean and Median:** 0.22 std dev
+**Difference between Mean and Median:** 0.22 std dev, ~1 game level
 
 **Sample Size:** 500 Games 
 
