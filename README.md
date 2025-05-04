@@ -1,8 +1,8 @@
 # Space Invaders Project Summary
 
-I trained an AI Agent to play Atari’s Space Invaders using PPO (Proximal Policy Optimization).  (PPO is a Reinforcement Learning algorithm that learns through self play.)  
+I trained an AI Agent to play Atari’s Space Invaders using PPO (Proximal Policy Optimization).  PPO is a Reinforcement Learning algorithm that learns through self play.  
 
-The agent plays Space Invaders better than an average skilled human.  The agent can get the game score to roll over twice.  (The score rolls over when it exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Space Invaders has no final level like many other Atari games, so it is possible to play the game indefinitely.  In practice my agent can reach as far as level 32 in its highest scoring game.)
+The agent plays Space Invaders [better than an average skilled human](https://arxiv.org/pdf/2112.04145). (Mean Agent Score 5.0k vs Mean Expert Human Score 2.8 k).  In the agent's highest scoring game it can get the Space Invaders' game score to roll over twice.  The score rolls over when it exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Space Invaders has no final level like many other Atari games, so it is possible to play the game indefinitely.  In practice my agent can reach as far as level 32 in its highest scoring game.
 
 My agent is self taught and plays Space Invaders using only the images shown on the screen.  The agent has no prior knowledge of the game and has learned to play through self play.  This is similar to what [Google’s Deepmind team did with Atari’s Breakout game](https://youtu.be/V1eYniJ0Rnk?si=MxJzxsX09T2sNEiW).
 
@@ -10,6 +10,12 @@ I am proud of what I accomplished and wanted to share my results.
 
 
 ## Results 
+
+Video of High Scoring Game:
+
+<img src="space_invaders_ppo__score_24935.gif" width="700" height="700"/>
+
+### Scoring Statistics 
 
 **High Score:** 24.9 k  (24,935)  
 
@@ -28,18 +34,14 @@ I am proud of what I accomplished and wanted to share my results.
 **Percentage Games Where Score Rolls Over Twice:** 0.6%
 
 
- 
-Video of High Scoring Game:
-
-<img src="space_invaders_ppo__score_24935.gif" width="700" height="700"/>
-
 
 ## Agent Model 
 
 This is a summary of how my agent chooses its Atari controller input for each frame of the game.
 - Prprocessing Layers
 - Action Selection with CNN (Convolutional Neural Network)
-- PPO Training Philosophy
+- Receptive Field Size
+- PPO Training Overview
 
 ## Preprocessing Layers  
 - Casting Images to Black and White
@@ -66,7 +68,7 @@ The CNN layers accepts a stack of images as input and then performs self-taught 
 To achieve the final controller output, the final convolutional layer is flattened and passed through a dense, fully connected layer that maps the different extracted layers to Atari controller input probabilities.  (This is done with matrix multiplication of a weight matrix against the flattened feature vector CNN output.)  Some details are omitted for brevity.  The agent then chooses an action based on which probability has the highest chance of increasing the total score for the Space Invaders game.
 
 ### CNN Network Description
-The CNN used is from the original nature paper.
+The CNN used is from the [original Nature Paper](https://arxiv.org/abs/1312.5602).
 - 84x84 Greyscale (single channel) Image
 - Framestacking
 - 1st CNN, 8x8 Window, 16 Channels Out, Stride 4, No Padding
