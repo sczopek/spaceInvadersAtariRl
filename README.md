@@ -1,6 +1,6 @@
 # Space Invaders Project Summary
 
-I trained an AI Agent to play Atari’s Space Invaders using PPO (Proximal Policy Optimization).  PPO is a Reinforcement Learning algorithm that learns through self play.  
+I trained an AI Agent to play Atari’s Space Invaders game.  The agent was trained using PPO (Proximal Policy Optimization), which is a Reinforcement Learning algorithm that learns through self play.  
 
 The agent plays Space Invaders [better than an average skilled human](https://arxiv.org/pdf/2112.04145). (Mean Agent Score 5.0k vs Mean Expert Human Score 2.8 k).  In the agent's highest scoring game it can get the Space Invaders' game score to roll over twice.  The score rolls over when it exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Space Invaders has no final level like many other Atari games, so it is possible to play the game indefinitely.  In practice my agent can reach as far as level 32 in its highest scoring game.
 
@@ -11,7 +11,7 @@ I am proud of what I accomplished and wanted to share my results.
 
 ## Results 
 
-Video of High Scoring Game:
+###Video of High Scoring Game:
 
 <img src="space_invaders_ppo__score_24935.gif" width="700" height="700"/>
 
@@ -35,9 +35,8 @@ Video of High Scoring Game:
 
 
 
-## Agent Model 
+## Agent Model
 
-This is a summary of how my agent chooses its Atari controller input for each frame of the game.
 - Prprocessing Layers
 - Action Selection with CNN (Convolutional Neural Network)
 - Receptive Field Size
@@ -49,7 +48,7 @@ This is a summary of how my agent chooses its Atari controller input for each fr
 - Frame Stacking
 
 ### Casting Images to Black and White
-The raw game images are taken as model input from the ALE (Atari Learning Environment) emulator.  The raw images are then cast from color images into black and white images.  The rational for the loss of color is that black and white images are faster to train on.  A black and white image can be respresented by a single number, but a colored RGB image is represented by three numbers.  Additionally, the color images do not carry any additional information so using black and white does not result in a loss in information.  
+The raw game images are taken as model input from the ALE (Atari Learning Environment) emulator.  The raw images are then cast from color images into black and white images, because black and white images are faster to train on.  A black and white image can be respresented by a single number, but a colored RGB image is represented by three numbers.  Additionally, the color images do not carry any additional information so using black and white does not result in a loss in information.  
 
 ### Rescaling to Square Images
 The images are then made square after being made black and white.  These square images also reduce model training time, because the agent does not need to learn that the images are rectangular when fitting certain multi-dimensional gaussian functions*.  
@@ -63,12 +62,12 @@ The specifics of my framestacking scheme is to store and stack the last four ima
 ## Action Selection with CNN 
 ### How the CNN Selects an Atari Controller Command 
 
-The CNN layers accepts a stack of images as input and then performs self-taught feature extraction.  This feature extraction is performed by sliding a window across the stack of images and performing a convolution of the sub-image in that sliding window.  This convolved product, of the sub-image, forms the next image layer, which is then convolved again with a separate sliding window that belongs to the next convolutional layer.  This process is repeated several times.  
+The CNN layers accepts a stack of images as input and then performs self-taught feature extraction.  This feature extraction is performed by sliding a window across the stack of images and performing a convolution of the sub-image in that sliding window.  This convolved product forms the next image layer, which is then convolved again with a separate sliding window that belongs to the next convolutional layer.  This process is repeated several times.  
 
 To achieve the final controller output, the final convolutional layer is flattened and passed through a dense, fully connected layer that maps the different extracted layers to Atari controller input probabilities.  (This is done with matrix multiplication of a weight matrix against the flattened feature vector CNN output.)  Some details are omitted for brevity.  The agent then chooses an action based on which probability has the highest chance of increasing the total score for the Space Invaders game.
 
 ### CNN Network Description
-The CNN used is from the [original Nature Paper](https://arxiv.org/abs/1312.5602).
+The Model's CNN is from the [original Nature Atari DQN Paper](https://arxiv.org/abs/1312.5602).
 - 84x84 Greyscale (single channel) Image
 - Framestacking
 - 1st CNN, 8x8 Window, 16 Channels Out, Stride 4, No Padding
@@ -83,7 +82,7 @@ The CNN used is from the [original Nature Paper](https://arxiv.org/abs/1312.5602
 
 ### Calculating the Receptive Field Size
 
-The Receptive Field (RF) size indicates the width of the largest feature the CNN can detect.  The Receptive Field depends on the kernel dimensions for each CNN layer.  The larger the kernel width, the larger Receptive Field.  This is also true for the number of CNN layers too.  The more CNN layers there are, the larger the recpetive field.  (MaxPooling, a type of downsampling, also influences the Receptive Field size.  Kernel Stride also influences RF size too.)
+The Receptive Field (RF) size indicates the width of the largest feature the CNN policy network can extract.  The Receptive Field depends on the kernel dimensions for each CNN layer.  The larger the kernel width, the larger Receptive Field.  This is also true for the number of CNN layers too.  The more CNN layers there are, the larger the recpetive field.  (MaxPooling, a type of downsampling, and Kernel Stride also influences the Receptive Field size.)
 
 
 RF Size = 36 Pixels
@@ -94,21 +93,27 @@ The RF size does not have to span the entire screen width (84 pixels) to select 
 The RF Size can contain several Space Invaders game sprites, so the CNN output features can simultaneously consider several objects at once.
 
 RF Formula:
+
 j_out = j_in * s
+
 r_out = r_in + (k-1) * j_in
+
 
 These values are calculated recursively for each CNN Layer.
 
 r = receptive field
+
 k = kernel width, if kernel is 3x3 k=3
+
 s = kernel stride
+
 j = kernel jump.  Kernel jump for layer n only depends on the previous (n-1) layers.
 
 RF Size Values for Each Layer:
--RF, Input = 1
--RF, Layer 1 = 8
--RF, Layer 2 = 20
--RF, Layer 3 = 36
+- RF, Input = 1
+- RF, Layer 1 = 8
+- RF, Layer 2 = 20
+- RF, Layer 3 = 36
 
 
 ## PPO Agent Training
@@ -121,7 +126,7 @@ PPO (Proximal Policy Optimization) is a training technique.  PPO's goal is to ex
 
 The agent learns to predict this policy by exploring the environment.  This is done by playing through the space invaders game many times.  For each screen capture (each frame) the agent predicts which action is best and then compares that prediction to the observation.  The difference between prediction and observation is the basis for the agent's policy update.
 
-PPO's innovations over earlier RL techniques is twofold.  It only allows small (proximal) policy updates.  The PPO algorithm uses a much simpler small policy update than its immediate predecessor TRPO (Trust Region Policy Update).  It is not clear to me why these simple innovations produce better results for PPO, but there is emprical evidence that shows PPO is a robust RL learner that can demonstrate model improvement in situations where other RL techniques fail.
+PPO's innovations over earlier RL techniques is twofold.  It only allows small (proximal) policy updates.  The PPO algorithm uses a much simpler small policy update than its immediate predecessor TRPO (Trust Region Policy Update).  It is not clear to me why these innovations produce better results , but there is emprical evidence that shows PPO is a robust RL learner that can demonstrate model improvement in situations where other RL techniques fail.
 
 ## Python Modules Used for Project
 
