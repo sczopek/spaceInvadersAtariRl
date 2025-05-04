@@ -11,7 +11,7 @@ I am proud of what I accomplished and wanted to share my results.
 
 ## Results 
 
-###Video of High Scoring Game:
+### Video of High Scoring Game:
 
 <img src="space_invaders_ppo__score_24935.gif" width="700" height="700"/>
 
