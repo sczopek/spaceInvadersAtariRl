@@ -124,11 +124,9 @@ RF Size Values for Each Layer:
 
 [Or read this thesis for an in depth review of PPO.](https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf)
 
-PPO (Proximal Policy Optimization) is a training technique.  PPO's goal is to explore the environment to find a good Policy.  A Policy is a algorithm that looks at the screen and then provides the odds about what choice is best.  The agent chooses between different gameplay actions, and for a given scene action 1 is best (on avg) some percentage of the time, action 2 is best a different percentage of the time, etc.  
+PPO (Proximal Policy Optimization) is a training technique.  PPO's goal is to explore the environment to find a good Policy.  A Policy is a algorithm that looks at the screen and then provides the odds about what choice is best.  The agent learns to predict this policy by exploring the environment.  This is done by playing through the space invaders game many times.  For each screen capture (each frame) the agent predicts which action is best and then compares that prediction to the observation.  The difference between prediction and observation is the basis for the agent's policy update.
 
-The agent learns to predict this policy by exploring the environment.  This is done by playing through the space invaders game many times.  For each screen capture (each frame) the agent predicts which action is best and then compares that prediction to the observation.  The difference between prediction and observation is the basis for the agent's policy update.
-
-PPO's innovations over earlier RL techniques is twofold.  (1) It only allows small (proximal) policy updates.  (2) The PPO algorithm uses a much simpler small policy update than its immediate predecessor TRPO (Trust Region Policy Update).  It is not clear to me why these innovations produce better results , but there is emprical evidence that shows PPO is a robust RL learner that can demonstrate model improvement in situations where other RL techniques fail.
+PPO's innovations over earlier RL techniques is twofold.  (1) It only allows small (proximal) policy updates.  (2) The PPO algorithm uses a much simpler small policy update than its immediate predecessor TRPO (Trust Region Policy Update).  There is emprical evidence that shows PPO is a robust RL learner that can demonstrate model improvement in situations where other RL techniques fail.
 
 ## Python Modules Used for Project
 
