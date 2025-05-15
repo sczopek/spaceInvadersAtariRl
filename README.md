@@ -43,11 +43,11 @@ I am proud of what I accomplished and wanted to share my results.
 - PPO Training Overview
 
 ## Preprocessing Layers  
-- Casting Images to Black and White
+- Converting Images to Black and White
 - Rescaling to Square Images
 - Frame Stacking
 
-### Casting Images to Black and White
+### Converting Images to Black and White
 The raw game images are taken as model input from the ALE (Atari Learning Environment) emulator.  The raw images are then cast from color images into black and white images, because black and white images are faster to train on.  A black and white image can be respresented by a single number, but a colored RGB image is represented by three numbers.  Additionally, the color images do not carry any additional information so using black and white does not result in a loss in information.  
 
 ### Rescaling to Square Images
