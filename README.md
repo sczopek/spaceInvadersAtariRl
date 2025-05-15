@@ -120,9 +120,9 @@ RF Size Values for Each Layer:
 
 ## PPO Agent Training
 
-[Please see this Open AI's announcement for details.](https://openai.com/index/openai-baselines-ppo/)
+[Please see Open AI's announcement for an introduction to the PPO Algorithm.](https://openai.com/index/openai-baselines-ppo/)
 
-[Or read this thesis for even more technical details.](https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf)
+[Or read this thesis for an in depth review of PPO.](https://fse.studenttheses.ub.rug.nl/25709/1/mAI_2021_BickD.pdf)
 
 PPO (Proximal Policy Optimization) is a training technique.  PPO's goal is to explore the environment to find a good Policy.  A Policy is a algorithm that looks at the screen and then provides the odds about what choice is best.  The agent chooses between different gameplay actions, and for a given scene action 1 is best (on avg) some percentage of the time, action 2 is best a different percentage of the time, etc.  
 
