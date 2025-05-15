@@ -86,7 +86,9 @@ The Receptive Field (RF) size indicates the width of the largest feature the CNN
 
 
 RF Size = 36 Pixels
+
 Game Screen = 84x84 Pixels
+
 RF Size / Screen Width = 36/84 = 42.9%
 
 The RF size does not have to span the entire screen width (84 pixels) to select a good next action for the Space Invaders game.
