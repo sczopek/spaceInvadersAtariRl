@@ -56,7 +56,7 @@ The images are then made square after being made black and white.  These square 
 ### Frame Stacking
 Frame stacking is used to help the agent detect motion on the game screen.  A raw screenshot does not indicate velocity for objects in the image frame.  A short image history buffer is used to infer object motion.   This motion detection behavior is automatically learned by the next CNN Layer.  
 
-The specifics of my framestacking scheme is to store and stack the last four images as a tensor.  These four images are the current image and three previous image.  Each image has a four frame spacing between images, images (N - 12, N - 8, N - 4, N).  This is the output that is piped into the next CNN layer.
+The specifics of my framestacking scheme is to store and stack the last four images as a tensor.  These four images are the current image and three previous image.  Each image has a four frame spacing between images.  The stacked images are numbered (N - 12, N - 8, N - 4, N).  This is the output that is piped into the next CNN layer.
 
 
 ## Action Selection with CNN 
