@@ -1,6 +1,6 @@
 # Space Invaders Project Summary
 
-I trained an AI Agent to play Atari’s Space Invaders game.  The agent was trained using PPO (Proximal Policy Optimization), which is a Reinforcement Learning algorithm that learns through self play.  
+I trained an AI Agent to play Atari’s Space Invaders game.  This was an opportunity for me to learn about RL (Reinforcement Learning), specifically PPO (Proximal Policy Optimization).  PPO is a powerful but simple algorithm that allows an agent to learn through self play.  
 
 The agent plays Space Invaders [better than an average skilled human](https://arxiv.org/pdf/2112.04145). (Mean Agent Score 5.0k vs Mean Expert Human Score 2.8 k).  In the agent's highest scoring game it can get the Space Invaders' game score to roll over twice.  The score rolls over when it exceeds 9999.  This score rollover occurs every 16 levels, so the agent has completed the first 32 levels of the game when the score rolls over twice.  Space Invaders has no final level like many other Atari games, so it is possible to play the game indefinitely.  In practice my agent can reach as far as level 32 in its highest scoring game.
 
